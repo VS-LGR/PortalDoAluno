@@ -1,0 +1,340 @@
+body {
+    overflow-x: hidden;
+    font-family: Sans-Serif;
+    margin: 0;
+    background-color: #161616;
+  }
+  
+  .menu-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background: #000000;
+    color: #ffffff;
+    padding: 20px;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+    box-sizing: border-box;
+  }
+  
+  .menu-logo {
+    line-height: 0;
+    margin: 0 20px;
+  }
+  
+  .menu-logo img {
+    max-height: 100px;
+    max-width: 150px;
+    flex-shrink: 0;
+    margin-left: 30px;
+  }
+
+  .gg-bell{
+    margin-top: 4.5px;
+  }
+
+  .gg-bell a:hover{
+    color: #E91359;
+  }
+  
+  .menu-container a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s ease;
+  }
+  
+  .menu-container a:hover {
+    color: #E91359;
+  }
+  
+  .menu-container input {
+    display: block;
+    width: 35px;
+    height: 25px;
+    margin: 0;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0; /* hide this */
+    z-index: 2; /* and place it over the hamburger */
+    -webkit-touch-callout: none;
+  }
+  
+  /* Burger menu */
+  .menu-container span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #E91359;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                opacity 0.55s ease;
+  }
+  
+  .menu-container span:first-child {
+    transform-origin: 0% 0%;
+  }
+  
+  .menu-container span:nth-child(3) {
+    transform-origin: 0% 100%;
+  }
+  
+  .menu-container input:checked ~ span {
+    opacity: 1;
+    transform: rotate(45deg) translate(3px,-1px);
+    background: #E91359;
+  }
+  
+  .menu-container input:checked ~ span:nth-child(4) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+  }
+  
+  .menu-container input:checked ~ span:nth-child(3) {
+    transform: rotate(-45deg) translate(-5px,11px);
+  }
+  
+  .menu ul {
+    list-style: none;
+  }
+  
+  .menu li {
+    padding: 10px 0;
+    font-size: 22px;
+  }
+  
+  /* mobile styles */
+  @media only screen and (max-width: 767px) { 
+    .menu-container {
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    
+    .menu-logo {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  
+    .menu-logo img {
+      max-height: 30px;
+      margin-left: -3px;
+    }
+  
+    .menu {
+      position: absolute;
+      box-sizing: border-box;
+      width: 300px;
+      right: -300px;
+      top: 0;
+      margin: -20px;
+      padding: 75px 50px 50px;
+      background: #161616;
+      -webkit-font-smoothing: antialiased;
+      /* to stop flickering of text in safari */
+      transform-origin: 0% 0%;
+      transform: translateX(0%);
+      transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    }
+  
+    .menu-container input:checked ~ .menu {
+      transform: translateX(-100%);
+    }
+
+    h1{
+        color: #E91359;
+        font-family: "M PLUS Rounded 1c", sans-serif;
+        font-style: normal;
+        font-weight: 100;
+        padding: 0 100px;
+      }
+  }
+  
+  /* desktop styles */
+  @media only screen and (min-width: 768px) { 
+    .menu-container {
+      width: 100%;
+    }
+  
+    .menu-container a {
+      color: #ffffff;
+    }
+  
+    .menu-container input {
+      display: none;
+    }
+  
+    /* Burger menu */
+    .menu-container span {
+      display: none;
+    }
+  
+    .menu {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    .menu ul {
+      display: flex;
+      padding: 0;
+    }
+  
+    .menu li {
+      padding: 0 20px;
+    }
+    
+    h1{
+      color: #E91359;
+      font-family: "M PLUS Rounded 1c", sans-serif;
+      font-style: normal;
+      font-weight: 100;
+      font-size: 50px;
+      padding: 40px 80px 0px;
+      margin-bottom: 1px;
+    }
+  }
+
+  
+  .back-button {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    position: absolute;
+    top: 120px;
+    left: 100px;
+    padding: 3px 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.back-button:hover {
+  color: #E91359;
+}
+
+.request-button {
+  position: absolute;
+  top: 150px;
+  right: 20px;
+}
+
+.request-button button {
+  background-color: #E91359;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.request-button button:hover {
+  background-color: #a10f40;
+}
+
+.horizontal-list {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-size: 18px;
+  display: flex;
+  justify-content: left;
+  padding-left: 80px;
+  color:#fff;
+}
+
+.horizontal-list label {
+  display: block;
+  padding-right: 14px;
+}
+
+.horizontal-list input[type="radio"] + label {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.yearbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  color: #fff;
+  background-color: #E91359;
+  width: 160px;
+  height: 80px;
+  font-size: 35px;
+  margin-left: 84px;
+  margin-top: 20px;
+  position: absolute;
+  left: 0;
+}
+
+.pending {
+  margin-left: 280px;
+  margin-right: 40px;
+  position: static;
+}
+
+.month {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  color: #E91359;
+  display:flex;
+  justify-content: start;
+  align-items: center;
+  font-size: 22px;
+  padding-bottom: 10px;
+  padding-top: 30px;
+}
+
+.pay {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-size: 18px;
+  color: #fff;
+  background-color: #2b2b2b;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 2%;
+  padding-right: 2%;
+
+}
+
+.footer {
+  background-color: #161616;
+  padding: 30px;
+}
+
+.status {
+  background-color: orange;
+  padding: 2px 20px;
+  border-radius: 5px;
+  text-align: center;
+  justify-content: center;
+}
+
+.boleto {
+  text-decoration: none;
+  color: #E91359;
+}
+
+.boleto:hover {
+  color: #a10f40;
+}
+
+/* Estiliza a barra de rolagem */
+::-webkit-scrollbar {
+  width: 12px; /* largura da barra de rolagem */
+}
+
+/* Estiliza o indicador de rolagem (thumb) */
+::-webkit-scrollbar-thumb {
+  background-color: #E91359; /* cor do indicador de rolagem */
+  border-radius: 6px; /* borda arredondada do indicador de rolagem */
+}
